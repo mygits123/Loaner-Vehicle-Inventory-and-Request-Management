@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="9b670a20470ec2101fd014bf016d43b9" label="Vehicle Servicing" max_length="40" name="x_1048394_lva_vehicle_servicing" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Vehicle Status" mandatory="true" max_length="40" name="u_choice_3" type="string">
+            <choice>
+                <element inactive_on_update="false" label="In Service" sequence="0" value="in service"/>
+                <element inactive_on_update="false" label="Returned to Warehouse" sequence="1" value="returned to warehouse"/>
+                <element inactive_on_update="false" label="Decommissioned" sequence="2" value="decommissioned"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Ticket Status" mandatory="true" max_length="40" name="u_choice_6" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="0" value="open"/>
+                <element inactive_on_update="false" label="Closed" sequence="1" value="closed"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Date sent for Servicing" mandatory="true" max_length="40" name="u_glide_date_4" type="glide_date"/>
+        <element attributes="encode_utf8=false" label="Vehicle Servicing" mandatory="true" max_length="32" name="u_reference_1" reference="x_1048394_lva_vehicle_tracker" type="reference"/>
+        <element attributes="encode_utf8=false" label="Vehicle" mandatory="true" max_length="32" name="u_reference_2" reference="x_1048394_lva_vehicle_servicing" type="reference"/>
+        <element attributes="encode_utf8=false" label="Vehicle Tracker" max_length="32" name="u_reference_3" reference="x_1048394_lva_vehicle_tracker" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Vehicle Issues" mandatory="true" max_length="1000" name="u_string_7" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Work Performed" max_length="1000" name="u_string_8" type="string"/>
+        <index name="index">
+            <element name="u_reference_1"/>
+        </index>
+        <index name="index2">
+            <element name="u_reference_2"/>
+        </index>
+        <index name="index3">
+            <element name="u_reference_3"/>
+        </index>
+    </element>
+</database>
